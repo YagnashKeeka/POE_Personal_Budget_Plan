@@ -108,5 +108,5 @@ My name is Yagnash Keeka and I am a student at Varsity College (Located in Sandt
 Email: 20108984@vcconnect.co.za
 ----------------------------------------------------------------------------------------------------------
 * 7. GITHUB LINK
-
+https://github.com/YagnashKeeka/POE_Personal_Budget_Plan.git
 ----------------------------------------------------------------------------------------------------------
