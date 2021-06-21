@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfApp_BudgetPlanning_POE.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_BudgetPlanning_POE"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8CEAFF" Offset="0"/>
+                <GradientStop Color="#FF00FDCF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock x:Name="grossSalary" HorizontalAlignment="Left" Margin="22,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="71"><Run Text="Gross Salary"/><Run Text=": "/></TextBlock>
+        <TextBlock x:Name="taxDeductions" HorizontalAlignment="Left" Margin="22,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="24"><Run Text="Tax"/><Run Text=":"/><Run Text=" Deductions"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtTax" HorizontalAlignment="Left" Height="23" Margin="22,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtTax_TextChanged"/>
+        <TextBlock x:Name="monthlyIncome_Copy1" HorizontalAlignment="Left" Margin="1,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="177" TextDecorations="Underline" FontWeight="Bold"><Run Text="Enter your monthly "/><Run Text="expenses"/></TextBlock>
+        <TextBlock x:Name="Grocery" HorizontalAlignment="Left" Margin="22,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="48"><Run Text="Grocery"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtGroceryCost" HorizontalAlignment="Left" Height="24" Margin="22,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtGroceryCost_TextChanged"/>
+        <TextBlock x:Name="WaterAndLights" HorizontalAlignment="Left" Margin="22,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="Water and Lights:" Width="93" Height="20"/>
+        <TextBox x:Name="txtWaterLights" HorizontalAlignment="Left" Height="23" Margin="22,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtWaterLights_TextChanged"/>
+        <TextBlock x:Name="travelCosts" HorizontalAlignment="Left" Margin="20,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="Travel Costs (Petrol Included):" Width="158" Height="15"/>
+        <TextBox x:Name="txtTravelCost" HorizontalAlignment="Left" Height="23" Margin="20,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtTravelCost_TextChanged"/>
+        <TextBlock x:Name="CellphoneAndTelephone" HorizontalAlignment="Left" Margin="20,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Width="142" Height="19"><Run Text="Cellphone and Telephone"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="20,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPhone_TextChanged"/>
+        <TextBlock x:Name="ExtraExpenses" HorizontalAlignment="Left" Margin="22,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="Extra Expenses:" Height="16" Width="84"/>
+        <TextBox x:Name="txtExtra" HorizontalAlignment="Left" Height="23" Margin="22,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtExtra_TextChanged"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="211,10,0,1" Width="5" BorderBrush="Black" Background="#FF919191"/>
+        <TextBlock x:Name="cmbBoxSelect" HorizontalAlignment="Left" Margin="221,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="225" TextDecorations="Underline" Text="Select if you are Renting or Purchasing a Property" FontWeight="Bold"/>
+        <RadioButton GroupName="hireBuyRadBtnGroup" x:Name="radBtnRent" Content="Rent Property" HorizontalAlignment="Left" Margin="226,48,0,0" VerticalAlignment="Top" Checked="radBtnRent_Checked" BorderBrush="Red"/>
+        <TextBlock x:Name="lblRentAProperty" Visibility="Hidden"  HorizontalAlignment="Left" Margin="221,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="90"><Run Text="Rent a Property"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtRentProperty" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="221,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtRentProperty_TextChanged"/>
+        <RadioButton GroupName="hireBuyRadBtnGroup" x:Name="radbtnPurchase" Content="Purchase Property" HorizontalAlignment="Left" Margin="226,121,0,0" VerticalAlignment="Top" Checked="radbtnPurchase_Checked" BorderBrush="Red"/>
+        <TextBlock x:Name="lblPurchasePrice" Visibility="Hidden" HorizontalAlignment="Left" Margin="226,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="85" Text="Purchase Price:"/>
+        <TextBox x:Name="txtPurProp" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="226,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtPurProp_TextChanged"/>
+        <TextBlock x:Name="lblTotalDeposit" Visibility="Hidden" HorizontalAlignment="Left" Margin="226,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="77" Text="Total Deposit:"/>
+        <TextBox x:Name="txtTotalDeposit" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="226,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtTotalDeposit_TextChanged"/>
+        <TextBlock x:Name="lblInterestRate" Visibility="Hidden" HorizontalAlignment="Left" Margin="226,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="133"><Run Text="Interest rate"/><Run Text=" (1% = 0.01)"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtInterest" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="226,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1" TextChanged="txtInterest_TextChanged"/>
+        <TextBlock x:Name="lblNoOfMonths" Visibility="Hidden" HorizontalAlignment="Left" Margin="226,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="108"><Run Text="Months (240 -360)"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtMonths" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="226,332,0,0" TextWrapping="Wrap" Text="240" VerticalAlignment="Top" Width="120" TextChanged="txtMonths_TextChanged"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="451,9,0,1" Width="5" BorderBrush="Black" Background="#FF919191"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,-11,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" FontWeight="Bold" FontSize="50" Foreground="Red" Height="37" RenderTransformOrigin="0.522,0.027"/>
+        <TextBlock x:Name="cmbBoxSelect_Copy" HorizontalAlignment="Left" Margin="484,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="249" TextDecorations="Underline" Text="You may enter details of the vehicle if it is to be purchased" FontWeight="Bold"/>
+        <TextBlock x:Name="blkRentAProperty3" HorizontalAlignment="Left" Margin="628,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="106"><Run Text="Model And Make"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="628,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtModel_TextChanged"/>
+        <TextBlock x:Name="blkRentAProperty2" HorizontalAlignment="Left" Margin="467,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="86" Text="Purchase Price:"/>
+        <TextBox x:Name="txtVehiclePrice" HorizontalAlignment="Left" Height="24" Margin="467,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtVehiclePrice_TextChanged"/>
+        <TextBlock x:Name="blkRentAProperty1" HorizontalAlignment="Left" Margin="467,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="80"><Run Text="Total Deposit"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="txtVehicleDeposit" HorizontalAlignment="Left" Height="23" Margin="467,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtVehicleDeposit_TextChanged"/>
+        <TextBlock x:Name="blkInterestRate1" HorizontalAlignment="Left" Margin="467,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="74" Text="Interest rate:"/>
+        <TextBox x:Name="txtVehicleInterest" HorizontalAlignment="Left" Height="23" Margin="467,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtVehicleInterest_TextChanged"/>
+        <TextBlock x:Name="blkRentAProperty1_Copy" HorizontalAlignment="Left" Margin="467,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Height="16" Width="60" Text="Insurance:"/>
+        <TextBox x:Name="txtVehicleInsurance" HorizontalAlignment="Left" Height="22" Margin="467,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtVehicleInsurance_TextChanged"/>
+        <Button x:Name="butValidate" Content="Validate&#xD;&#xA;Expenses" HorizontalAlignment="Left" Margin="456,373,0,0" VerticalAlignment="Top" Width="75" Click="butValidate_Click"/>
+        <Button x:Name="butList" Content="List of&#xD;&#xA;Expenses" HorizontalAlignment="Left" Margin="536,373,0,0" VerticalAlignment="Top" Width="75" Height="36" Click="butList_Click"/>
+        <Button x:Name="butExit" Content="Exit" HorizontalAlignment="Left" Margin="707,373,0,0" VerticalAlignment="Top" Width="75" Height="36" Background="#FFFFA6A6" FontWeight="Bold" Click="butExit_Click"/>
+        <Button x:Name="butEstimate" Content="Savings&#xD;&#xA;Value" HorizontalAlignment="Left" Margin="616,373,0,0" VerticalAlignment="Top" Width="75" Height="36" Click="butEstimate_Click"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="451,9,0,1" Width="5" BorderBrush="Black" Background="#FF919191"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Margin="619,64,0,13" Width="6" BorderBrush="Black" Background="#FF919191" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.92"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <TextBlock x:Name="cmbBoxSelect_Copy1" HorizontalAlignment="Left" Margin="461,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="326" TextDecorations="Underline" FontWeight="Bold"><Run Text="Enter interest rate that will apply on"/><Run Text=" "/><Run Text="on monthly savings"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="lblAmountToSave" HorizontalAlignment="Left" Margin="461,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="Amount to save:" Width="93" Height="20"/>
+        <TextBlock x:Name="lbNoOfYears" HorizontalAlignment="Left" Margin="644,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="No. of Years:" Width="70" Height="20"/>
+        <TextBlock x:Name="lblSavingsInterest" HorizontalAlignment="Left" Margin="461,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Background="#FFCCF8FF" Text="Interest Rate:" Width="70" Height="20"/>
+        <TextBox x:Name="txtSavingsAmount" HorizontalAlignment="Left" Height="24" Margin="461,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSavingsAmount_TextChanged"/>
+        <TextBox x:Name="txtSavingsYears" HorizontalAlignment="Left" Height="23" Margin="644,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSavingsYears_TextChanged"/>
+        <TextBox x:Name="txtSavingsInterest" HorizontalAlignment="Left" Height="23" Margin="461,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSavingsInterest_TextChanged" Text="1"/>
+        <TextBlock x:Name="monthlyIncome_Copy" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="201" TextDecorations="Underline" FontWeight="Bold"><Run Text="Enter your monthly income"/><Run Text=" and tax"/></TextBlock>
+        <TextBox x:Name="txtGross" HorizontalAlignment="Left" Height="23" Margin="22,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtGross_TextChanged"/>
+
+    </Grid>
+</Window>
